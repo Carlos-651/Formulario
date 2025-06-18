@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Completo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="contenedor">
+        <h1>Formulario Completo</h1>
+        
+        <form id="mainForm" class="formulario">
+            <!-- Nombre completo -->
+            <div class="campo">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" placeholder="Escribe tu nombre completo">
+                <span class="error-mensaje" id="error-nombre"></span>
+            </div>
+            
+            <!-- Edad -->
+            <div class="campo">
+                <label for="edad">Edad</label>
+                <input type="number" id="edad" placeholder="Ingresa tu edad">
+                <span class="error-mensaje" id="error-edad"></span>
+            </div>
+            
+            <!-- Código Postal -->
+            <div class="campo">
+                <label for="codigoPostal">Código Postal</label>
+                <input type="text" id="codigoPostal" placeholder="Ingresa tu código postal: xxxxxx">
+                <span class="error-mensaje" id="error-codigoPostal"></span>
+            </div>
+            
+            <!-- Género -->
+            <div class="campo">
+                <label>Género:</label>
+                <div class="opciones">
+                    <label>
+                        <input type="radio" name="genero" value="masculino"> Masculino
+                    </label>
+                    <label>
+                        <input type="radio" name="genero" value="femenino"> Femenino
+                    </label>
+                    <label>
+                        <input type="radio" name="genero" value="otro"> Otro
+                    </label>
+                </div>
+                <span class="error-mensaje" id="error-genero"></span>
+            </div>
+            
+            <!-- Carrera (nuevo campo) -->
+            <div class="campo">
+                <label>Carrera:</label>
+                <div class="opciones">
+                    <label>
+                        <input type="radio" name="carrera" value="cienciasComputacion"> Ciencias de la Computación
+                    </label>
+                    <label>
+                        <input type="radio" name="carrera" value="ingenieria"> Ingeniería
+                    </label>
+                    <label>
+                        <input type="radio" name="carrera" value="artes"> Artes
+                    </label>
+                </div>
+                <span class="error-mensaje" id="error-carrera"></span>
+            </div>
+            
+            <!-- Intereses -->
+            <div class="campo">
+                <label>Intereses (selecciona todos los que apliquen):</label>
+                <div class="opciones">
+                    <label>
+                        <input type="checkbox" name="intereses" value="tecnologia"> Tecnología
+                    </label>
+                    <label>
+                        <input type="checkbox" name="intereses" value="deportes"> Deportes
+                    </label>
+                    <label>
+                        <input type="checkbox" name="intereses" value="musica"> Música
+                    </label>
+                    <label>
+                        <input type="checkbox" name="intereses" value="arte"> Arte
+                    </label>
+                </div>
+                <span class="error-mensaje" id="error-intereses"></span>
+            </div>
+            
+            <!-- País -->
+            <div class="campo">
+                <label for="pais">País:</label>
+                <select id="pais">
+                    <option value="">Selecciona tu país</option>
+                    <option value="mx">México</option>
+                    <option value="es">España</option>
+                    <option value="ar">Argentina</option>
+                    <option value="co">Colombia</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <span class="error-mensaje" id="error-pais"></span>
+            </div>
+            
+            <!-- Comentarios -->
+            <div class="campo">
+                <label for="comentarios">Comentarios adicionales:</label>
+                <textarea id="comentarios" placeholder="Escribe tus comentarios aquí..."></textarea>
+            </div>
+            
+            <!-- Subir imagen -->
+            <div class="campo">
+                <label>Subir imagen:</label>
+                <div class="archivo">
+                    <input type="file" id="subir-archivo" accept="image/*">
+                    <label for="subir-archivo" class="boton-archivo"></label>
+                </div>
+                <span class="error-mensaje" id="error-archivo"></span>
+            </div>
+            
+            <!-- Botón enviar -->
+            <button type="submit" class="boton">Enviar Formulario</button>
+        </form>
+    </main>
+
+    <script src="validacion.js"></script>
+</body>
+</html>
