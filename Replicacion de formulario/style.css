@@ -30,7 +30,6 @@ h1 {
     margin-bottom: 5px;
 }
 
-.campo input[type="file"],
 .campo input[type="text"],
 .campo input[type="number"],
 .campo select,
@@ -66,14 +65,136 @@ h1 {
 
 /*************************************************************************************************************************************++
 
-/* Estilos para errores */
+/* Contenedor del input de archivo */
+.archivo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+/* Oculta el input nativo */
+#subir-archivo {
+    display: none;
+}
+/*********************************************************************************************************************************
+//BOTONES
+
+/* Estilo botón de archivo */
+.button-archivo {
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.button-archivo:hover {
+    background: linear-gradient(135deg, #2980b9, #3498db);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.button-archivo:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de botón de enviar */
+.button {
+    width: 100%;
+    padding: 15px 25px;
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.button:hover {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+}
+
+.button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto adicional para el botón de enviar */
+.button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%, -50%);
+    transform-origin: 50% 50%;
+}
+
+/* Texto del nombre del archivo mejorado */
+.nombre-archivo {
+    font-size: 14px;
+    color: #555;
+    font-style: italic;
+    margin-left: 10px;
+    transition: all 0.3s;
+}
+
+/* Iconos para los botones */
+.button-archivo::before {
+    content: "📁";
+    font-size: 16px;
+}
+
+.button::after {
+    content: "→";
+    margin-left: 10px;
+    transition: all 0.3s;
+}
+
+.button:hover::after {
+    transform: translateX(5px);
+}
+
+/***********************************************************************************************************/
+/*Mensaje de error*/
+
+.error-mensaje {
+    color: #e74c3c;
+    font-size: 0.85em;
+    margin-top: 5px;
+    display: none;
+}
+
 .error {
     border-color: #e74c3c !important;
 }
 
-.error-mensaje {
-    color: #e74c3c;
-    font-size: 0.8em;
-    margin-top: 5px;
-    display: block;
+.opciones.error {
+    outline: 2px solid #e74c3c;
+    padding: 5px;
+    border-radius: 4px;
 }
