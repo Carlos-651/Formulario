@@ -102,7 +102,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Si todo es válido, mostrar mensaje de éxito
         if (isValid) {
             alert('Formulario enviado correctamente');
-            // formulario.submit(); // Descomentar para enviar realmente
         }
     });
 
@@ -149,9 +148,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Validación en tiempo real para código postal
     document.getElementById('codigoPostal').addEventListener('input', function(e) {
-        this.value = this.value.replace(/[^0-9]/g, ''); // Solo permite números
+        this.value = this.value.replace(/[^0-9]/g, ''); // Solo números
         if (this.value.length > 5) {
-            this.value = this.value.slice(0, 5); // Limita a 5 dígitos
+            this.value = this.value.slice(0, 5); // Limite de 5 dígitos
             mostrarError('codigoPostal', 'El código postal no es válido (máximo 5 dígitos)');
         } else {
             limpiarError('codigoPostal');
